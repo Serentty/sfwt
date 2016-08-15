@@ -16,7 +16,7 @@ class Planet
         //Orbital data
 
     private:
-        double esi; //Earth similatiry index (From 0 to 1)
+        double esi; //Earth similarity index (From 0 to 1)
 };
 
 //Orbital distances from 40e6 to
