@@ -16,7 +16,7 @@ class Planet
         //Orbital data
 
     private:
-        double esi;//Earth similatiry index (From 0 to 1)
+        double esi; //Earth similatiry index (From 0 to 1)
 };
 
 //Orbital distances from 40e6 to
@@ -24,14 +24,14 @@ class Planet
 Planet planetGeneration(double diameter = 12742000,double mass = 5.972e21, double gravity = 1, double temperature = 288)
 {
     Planet bob;
-    bob.diameter=diameter;
-    bob.mass=mass;
-    bob.gravity=gravity;
-    bob.temperature=temperature;
+    bob.diameter = diameter;
+    bob.mass = mass;
+    bob.gravity = gravity;
+    bob.temperature = temperature;
     return bob;
 };
 
-double orbitalPeriodCalculation(double semiMajorAxis, double mass)//Mass of the more massive body.
+double calculateOrbitalPeriod(double semiMajorAxis, double mass) //Mass of the more massive body.
 {
-    return 2*PI*sqrt(pow(semiMajorAxis,3)/GRAVITATIONAL_CONSTANT);
+    return 2 * PI * sqrt(pow(semiMajorAxis, 3) / GRAVITATIONAL_CONSTANT);
 }

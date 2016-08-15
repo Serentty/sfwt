@@ -12,6 +12,6 @@ class Planet
        double esi;
 };
 
-Planet planetGeneration(double diameter = 12742000,double mass = 5.972e21, double gravity = 1, double temperature = 288);
-double orbitalPeriodCalculation(double semiMajorAxis, double mass);
+Planet generatePlanet(double diameter = 12742000,double mass = 5.972e21, double gravity = 1, double temperature = 288);
+double calculateOrbitalPeriod(double semiMajorAxis, double mass);
 #endif
