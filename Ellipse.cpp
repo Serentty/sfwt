@@ -1,11 +1,11 @@
 #include <math.h>
 
 double findDistanceBetweenPoints(double aX, double aY, double bX, double bY){
-    return sqrt(pow((bX-aX),2)+pow((bY-aY),2));
+    return sqrt(pow(( bX - aX ), 2)+pow(( bY - aY ), 2));
 }
 
 double findFoci(double semiMajorAxis, double semiMinorAxis){
-    if (semiMinorAxis > semiMajorAxis)
+    if(semiMinorAxis > semiMajorAxis)
     {
         double temp = semiMajorAxis;
         semiMajorAxis = semiMinorAxis;
@@ -16,9 +16,9 @@ double findFoci(double semiMajorAxis, double semiMinorAxis){
 
 // eccentricity = distance from the center to a focus Divided by the distance from that focus to a vertex
 double findEccentricity(double semiMajorAxis, double semiMinorAxis){
-    if (semiMajorAxis == semiMinorAxis)
+    if(semiMajorAxis == semiMinorAxis)
         return 0;//Bail early if it's a circle
-    else if (semiMinorAxis > semiMajorAxis)
+    else if(semiMinorAxis > semiMajorAxis)
     {
         double temp = semiMajorAxis;
         semiMajorAxis = semiMinorAxis;
