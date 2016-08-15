@@ -14,7 +14,7 @@ cout << "Diameter : " << earth.diameter << "m" << endl;
 cout << "Gravity : " << earth.gravity << "G" << endl;
 cout << "Temperature : " << earth.temperature << "K" << endl;
 */
-cout << orbitalPeriodCalculation(149.60e6, 1.989e30);
+cout << calculateOrbitalPeriod(149.60e6, 1.989e30);
 
 return 0;
 }
