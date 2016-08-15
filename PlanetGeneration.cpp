@@ -29,7 +29,7 @@ Planet planetGeneration(double diameter = 12742000,double mass = 5.972e21, doubl
     bob.gravity = gravity;
     bob.temperature = temperature;
     return bob;
-};
+}
 
 double calculateOrbitalPeriod(double semiMajorAxis, double mass) //Mass of the more massive body.
 {
