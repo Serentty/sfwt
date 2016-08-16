@@ -1,2 +1,7 @@
+# Compiled object files
 *.o
+
+# Compiled binaries/executables
 sfwt
+*.exe
+*.app
