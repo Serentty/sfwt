@@ -6,9 +6,7 @@
 class Chunk
 {
 public:
-    Tile tiles[][16];
-    Chunk();
-    ~Chunk();
+    Tile tiles[16][16];
 };
 
 #endif

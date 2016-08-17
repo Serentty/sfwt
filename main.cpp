@@ -7,4 +7,5 @@ using namespace std;
 int main()
 {
     Chunk ch;
+    cout << sizeof(ch) << endl;
 }
