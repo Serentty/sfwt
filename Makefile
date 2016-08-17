@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -std=c++14 -Wall -Werror -pedantic
 LIBS = -lncurses
-OBJECTS = main.o PlanetGeneration.o
+OBJECTS = main.o PlanetGeneration.o Chunk.o
 
 all: sfwt
 
