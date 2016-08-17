@@ -3,7 +3,9 @@
 
 class Material
 {
-    // TODO: Add properties that make materials unique
+public:
+    double density; // kilograms per cubic metre
+    Material(double density);
 };
 
 #endif

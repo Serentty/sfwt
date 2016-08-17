@@ -9,10 +9,10 @@ class Planet
 {
     public:
         std::string name;
-        double diameter;
-        double mass;
-        double gravity;
-        double temperature;
+        double diameter; // metres
+        double mass; // kilograms
+        double gravity; // m/s^2
+        double temperature; // kelvin
         //Orbital data
 
     private:
@@ -21,7 +21,7 @@ class Planet
 
 //Orbital distances from 40e6 to
 
-Planet planetGeneration(double diameter = 12742000,double mass = 5.972e21, double gravity = 1, double temperature = 288)
+Planet generatePlanet(double diameter = 12742000, double mass = 5.972e21, double gravity = 9.81, double temperature = 288)
 {
     Planet bob;
     bob.diameter = diameter;

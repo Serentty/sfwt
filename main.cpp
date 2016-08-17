@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string>
-#include "Chunk.h"
+#include "Material.h"
+#include "Calculations.h"
 
 using namespace std;
 
 int main()
 {
-    Chunk ch;
-    cout << sizeof(ch) << endl;
+    Material air(1.275);
+    cout << findMass(air, -2) << endl;
 }
