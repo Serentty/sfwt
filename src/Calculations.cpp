@@ -3,7 +3,7 @@
 #include "Calculations.h"
 #include "Material.h"
 
-double findMass(Material material, double volume)
+double findMass(Material &material, double volume)
 {
     if(volume < 0)
     {
@@ -13,7 +13,7 @@ double findMass(Material material, double volume)
     return material.density * volume;
 }
 
-double findVolume(Material material, double mass)
+double findVolume(Material &material, double mass)
 {
     if(mass < 0)
     {

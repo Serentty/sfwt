@@ -3,7 +3,7 @@
 
 #include "Material.h"
 
-double findMass(Material material, double volume);
-double findVolume(Material material, double mass);
+double findMass(Material &material, double volume);
+double findVolume(Material &material, double mass);
 
 #endif
