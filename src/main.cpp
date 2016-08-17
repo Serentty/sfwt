@@ -4,8 +4,11 @@
 #include "Material.h"
 #include "Calculations.h"
 #include "Chunk.h"
+#include "Renderer.h"
 
 using namespace std;
+
+Chunk ch;
 
 int main()
 {
@@ -19,6 +22,11 @@ int main()
     printw(" (Working Title)\n");
     refresh();
     getch();
+    ch.tiles[4][4].attributes[0] = true;
+    printw(render(ch).c_str());
+    refresh();
+    getch();
     endwin();
+
     return 0;
 }
