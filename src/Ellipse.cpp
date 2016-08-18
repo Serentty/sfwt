@@ -5,7 +5,7 @@ const double PI = 3.141592;
 
 double findDistanceBetweenPoints(double aX, double aY, double bX, double bY)
 {
-    return sqrt(pow((bX-aX),2)+pow((bY-aY),2));
+    return sqrt(pow((bX - aX), 2) + pow((bY - aY), 2));
 }
 
 double findFoci(double semiMajorAxis, double semiMinorAxis)
@@ -16,24 +16,24 @@ double findFoci(double semiMajorAxis, double semiMinorAxis)
         semiMajorAxis = semiMinorAxis;
         semiMinorAxis = temp;
     }
-    return sqrt(pow(semiMajorAxis,2)-pow(semiMinorAxis,2));
+    return sqrt(pow(semiMajorAxis, 2) - pow(semiMinorAxis, 2));
 }
 
 // eccentricity = distance from the center to a focus Divided by the distance from that focus to a vertex
 double findEccentricity(double semiMajorAxis, double semiMinorAxis)
 {
     if(semiMajorAxis == semiMinorAxis)
-        return 0;//Bail early if it's a circle
+        return 0; // Bail early if it's a circle
     else if(semiMinorAxis > semiMajorAxis)
     {
         double temp = semiMajorAxis;
         semiMajorAxis = semiMinorAxis;
         semiMinorAxis = temp;
     }
-    double focus = findFoci(semiMajorAxis,semiMinorAxis);
-    //Implicitly rotating the ellipse, this permit to compute the distance without messing with coordinates
-    double vertexToFocus = findDistanceBetweenPoints(focus,0,0,semiMinorAxis);
-    return focus/vertexToFocus;
+    double focus = findFoci(semiMajorAxis, semiMinorAxis);
+    // Implicitly rotate the ellipse, this lets us compute the distance without messing with coordinates
+    double vertexToFocus = findDistanceBetweenPoints(focus, 0, 0, semiMinorAxis);
+    return focus / vertexToFocus;
 }
 
 double findOrbitalPeriod(double semiMajorAxis)
@@ -43,7 +43,7 @@ double findOrbitalPeriod(double semiMajorAxis)
     //Re : Mean distance between Earth and Sun //1.4960e11m
     //Tp : Orbital period of planet
     //Rp : Mean distance of Planet (Semi Major Axis)
-    return 31536000*pow((semiMajorAxis/1.4960e11),1.5);
+    return 31536000 * pow((semiMajorAxis / 1.4960e11), 1.5);
 }
 
 
