@@ -2,7 +2,6 @@
 #define COLOUR_H
 
 #include <string>
-#include <cstdint>
 
 class Colour
 {
