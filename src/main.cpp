@@ -26,9 +26,9 @@ int main()
     ch.tiles[4][4][15].attributes[0] = true;
     Animal player;
     player.character = '@';
-    player.x = 2;
-    player.y = 2;
-    player.z = 15;
+    player.location.x = 2.0;
+    player.location.y = 2.0;
+    player.location.z = 15.0;
     ch.entities.push_back(&player);
     uint16_t key;
     for(;;)
@@ -37,16 +37,16 @@ int main()
         switch(key)
         {
             case KEY_UP: // up
-                player.relocateWithinChunk(player.x, player.y + 1, player.z);
+                player.relocateWithinChunk(Coordinates {player.location.x, player.location.y + 0.5, player.location.z});
                 break;
             case KEY_DOWN: // down
-                player.relocateWithinChunk(player.x, player.y - 1, player.z);
+                player.relocateWithinChunk(Coordinates {player.location.x, player.location.y - 0.5, player.location.z});
                 break;
             case KEY_LEFT: // right
-                player.relocateWithinChunk(player.x - 1, player.y, player.z);
+                player.relocateWithinChunk(Coordinates {player.location.x - 0.5, player.location.y, player.location.z});
                 break;
             case KEY_RIGHT: // left
-                player.relocateWithinChunk(player.x + 1, player.y, player.z);
+                player.relocateWithinChunk(Coordinates {player.location.x + 0.5, player.location.y, player.location.z});
                 break;
             case 'q': // quit
                 endwin();

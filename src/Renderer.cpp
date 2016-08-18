@@ -1,6 +1,7 @@
 #include "Renderer.h"
 #include "Chunk.h"
 #include "Entity.h"
+#include "Coordinates.h"
 
 std::string render(Chunk chunk)
 {
@@ -11,7 +12,8 @@ std::string render(Chunk chunk)
         {
             for(Entity *entity : chunk.entities)
             {
-                if(entity->x == x && entity->y == y && entity->z == 15)
+                FlooredCoordinates nearestTile = entity->findFlooredCoordinates();
+                if(nearestTile.x == x && nearestTile.y == y && nearestTile.z == 15)
                 {
                     renderedMap.push_back(entity->character);
                     goto nextTile;

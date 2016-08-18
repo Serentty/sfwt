@@ -1,8 +1,8 @@
 #include "Entity.h"
+#include "Coordinates.h"
+#include <cstdint>
 
-void Entity::relocateWithinChunk(uint8_t x, uint8_t y, uint8_t z)
+void Entity::move(Coordinates delta)
 {
-    this->x = x;
-    this->y = y;
-    this->z = z;
+    // TODO
 }
