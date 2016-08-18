@@ -9,7 +9,7 @@ class Chunk
 {
 public:
     Tile tiles[16][16];
-    std::vector<Entity> entities;
+    std::vector<Entity*> entities;
 };
 
 #endif

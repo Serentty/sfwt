@@ -28,9 +28,35 @@ int main()
     player.character = '@';
     player.x = 2;
     player.y = 2;
-    ch.entities.push_back(player);
-    printw(render(ch).c_str());
-    refresh();
+    ch.entities.push_back(&player);
+    player.relocateWithinChunk(player.x, player.y + 2);
+    uint16_t key;
+    for(;;)
+    {
+        key = getch();
+        switch(key)
+        {
+            case KEY_UP: // up
+                player.relocateWithinChunk(player.x, player.y + 1);
+                break;
+            case KEY_DOWN: // down
+                player.relocateWithinChunk(player.x, player.y - 1);
+                break;
+            case KEY_LEFT: // right
+                player.relocateWithinChunk(player.x - 1, player.y);
+                break;
+            case KEY_RIGHT: // left
+                player.relocateWithinChunk(player.x + 1, player.y);
+                break;
+            case 'q': // quit
+                endwin();
+                return 0;
+                break;
+        }
+        clear();
+        printw(render(ch).c_str());
+        refresh();
+    }
     getch();
     endwin();
 
