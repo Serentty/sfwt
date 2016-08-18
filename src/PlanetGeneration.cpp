@@ -16,10 +16,10 @@ class Planet
         //Orbital data
 
     private:
-        double esi; //Earth similarity index (From 0 to 1)
+        double esi; // Earth similarity index (From 0 to 1)
 };
 
-//Orbital distances from 40e6 to
+// Orbital distances from 40e6 to
 
 Planet generatePlanet(double diameter = 12742000, double mass = 5.972e21, double gravity = 9.81, double temperature = 288)
 {
@@ -31,7 +31,7 @@ Planet generatePlanet(double diameter = 12742000, double mass = 5.972e21, double
     return bob;
 }
 
-double calculateOrbitalPeriod(double semiMajorAxis, double mass) //Mass of the more massive body.
+double calculateOrbitalPeriod(double semiMajorAxis, double mass) // Mass of the more massive body.
 {
     return 2 * PI * sqrt(pow(semiMajorAxis, 3) / GRAVITATIONAL_CONSTANT);
 }
