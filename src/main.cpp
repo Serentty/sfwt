@@ -23,6 +23,11 @@ int main()
     refresh();
     getch();
     ch.tiles[4][4].attributes[0] = true;
+    Animal player;
+    player.character = '@';
+    player.x = 2;
+    player.y = 2;
+    ch.entities.append(player);
     printw(render(ch).c_str());
     refresh();
     getch();

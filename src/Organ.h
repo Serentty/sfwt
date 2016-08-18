@@ -2,13 +2,14 @@
 #define ORGAN_H
 
 #include <vector>
+#include "Entity.h"
 
 class Resource
 {
     double quantity;
 };
 
-class Organ
+class Organ : Entity
 {
    public:
        std::vector<Resource> inputs;
