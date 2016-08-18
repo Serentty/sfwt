@@ -11,13 +11,13 @@ std::string render(Chunk chunk)
         {
             for(Entity *entity : chunk.entities)
             {
-                if(entity->x == x && entity->y == y)
+                if(entity->x == x && entity->y == y && entity->z == 15)
                 {
                     renderedMap.push_back(entity->character);
                     goto nextTile;
                 }
             }
-            if(chunk.tiles[x][y].isSloped())
+            if(chunk.tiles[x][y][15].isSloped())
                 renderedMap.push_back('n');
             else
                 renderedMap.push_back('O');

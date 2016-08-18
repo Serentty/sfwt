@@ -4,7 +4,7 @@
 class Chunk
 {
 public:
-    Tile tiles[][];
+    Tile tiles[][][];
     Chunk();
     ~Chunk();
 };
