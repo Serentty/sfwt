@@ -3,7 +3,7 @@
 
 #include "Lifeform.h"
 
-class Animal : Lifeform
+class Animal : public Lifeform
 {
 
 };

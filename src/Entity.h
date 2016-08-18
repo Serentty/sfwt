@@ -6,6 +6,7 @@
 
 class Entity
 {
+public:
     // Location within the chunk
     uint8_t x;
     uint8_t y;

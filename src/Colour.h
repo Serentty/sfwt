@@ -8,7 +8,7 @@ class Colour
 {
 public:
     uint8_t red, green, blue;
-    string findName();
+    std::string findName();
 };
 
 #endif

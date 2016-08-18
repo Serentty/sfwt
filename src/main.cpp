@@ -4,6 +4,7 @@
 #include "Material.h"
 #include "Calculations.h"
 #include "Chunk.h"
+#include "Animal.h"
 #include "Renderer.h"
 
 using namespace std;
@@ -27,7 +28,7 @@ int main()
     player.character = '@';
     player.x = 2;
     player.y = 2;
-    ch.entities.append(player);
+    ch.entities.push_back(player);
     printw(render(ch).c_str());
     refresh();
     getch();

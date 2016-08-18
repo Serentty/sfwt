@@ -1,12 +1,12 @@
 #ifndef LIFEFORM_H
 #define LIFEFORM_H
 
-#include <vector.h>
+#include <vector>
 #include "Entity.h"
 
-class Lifeform : Entity
+class Lifeform : public Entity
 {
-    
+
 };
 
 #endif

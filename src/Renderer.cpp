@@ -13,18 +13,19 @@ std::string render(Chunk chunk)
             {
                 if(entity.x == x && entity.y == y)
                 {
-                    renderedMap.append(entity.character);
+                    renderedMap.push_back(entity.character);
                     goto nextTile;
                 }
             }
-            else if(chunk.tiles[x][y].isSloped())
-                renderedMap.append("n");
+            if(chunk.tiles[x][y].isSloped())
+                renderedMap.push_back('n');
             else
-                renderedMap.append("O");
+                renderedMap.push_back('O');
 
             nextTile:
+            continue;
         }
-        renderedMap.append("\n");
+        renderedMap.push_back('\n');
     }
     return renderedMap;
 }
