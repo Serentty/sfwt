@@ -51,6 +51,8 @@ double findTheta(double x, double y){
         return 0;
 	double Theta;
 	Theta = atan(y / x);
-	Theta = (Theta*180)/PI;
+	Theta = (Theta * 180) / PI;
 	return Theta;
 }
+
+
