@@ -2,7 +2,7 @@
 #include "Coordinates.h"
 #include <cstdint>
 
-void Entity::move(Coordinates delta)
+void Entity::move()
 {
-    // TODO
+    this->location += this->velocity;
 }

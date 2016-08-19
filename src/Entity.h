@@ -9,8 +9,8 @@
 class Entity
 {
 public:
-    // Location within the chunk
-    Coordinates location;
+    Coordinates location; // Location within the chunk in metres
+    Coordinates velocity; // Velocity relative to the coordinate grid in metres / second
     // Contents (eg. organs of living things, contents of a box, etc.)
     std::vector<Entity*> contents;
     // The character used to represent the entity in the world
@@ -26,7 +26,7 @@ public:
     {
         this->location = destination;
     };
-    void move(Coordinates delta);
+    void move();
 };
 
 #endif

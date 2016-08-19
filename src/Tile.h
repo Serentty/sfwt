@@ -8,9 +8,11 @@
 class Tile
 {
 public:
-    Material *material;
+    Material *floorMaterial;
+    Material *blockMaterial;
     std::bitset<16> attributes;
     inline bool isSloped() { return this->attributes[0]; };
 };
+
 
 #endif
