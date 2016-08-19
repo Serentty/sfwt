@@ -61,9 +61,9 @@ double findSemiMinorAxis(double semiMajorAxis, double eccentricity)
     return semiMajorAxis * std::sqrt(1 - std::pow(eccentricity, 2.0));
 }
 
-Vector2D
-findEllipseAndLineIntersection(double semiMajorAxis, double eccentricity, double theta, double lineXDisplacement,
-                               double ellipseXDisplacement, double ellipseYDisplacement)
+Vector2D findEllipseAndLineIntersection(double semiMajorAxis, double eccentricity, double theta,
+                                        double lineXDisplacement, double ellipseXDisplacement,
+                                        double ellipseYDisplacement)
 {
     //Ellipse a = SemiMajorAxis
     //Ellipse b = semiminor
