@@ -3,6 +3,11 @@
 const double GRAVITATIONAL_CONSTANT = 6.674e-11;
 const double PI = 3.141592;
 
+struct coord{
+double x;
+double y;
+};
+
 double findDistanceBetweenPoints(double aX, double aY, double bX, double bY)
 {
     return sqrt(pow((bX - aX), 2) + pow((bY - aY), 2));
@@ -55,4 +60,10 @@ double findTheta(double x, double y){
 	return Theta;
 }
 
+double findSemiMinorAxis(double semiMajorAxis, double eccentricity){
+    return semiMajorAxis * sqrt (1 - pow(eccentricity,2.0));
+}
 
+double findEllipseAndLineIntersection(double SemiMajorAxis, double eccentricity, double Theta){
+
+}

@@ -6,5 +6,6 @@ double findFoci(double semiMajorAxis, double semiMinorAxis);
 double findEccentricity(double semiMajorAxis, double semiMinorAxis);
 double findOrbitalPeriod(double semiMajorAxis);
 double findTheta(double x, double y);
+double findSemiMinorAxis(double semiMajorAxis, double eccentricity);
 
 #endif
