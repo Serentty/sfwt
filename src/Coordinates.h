@@ -1,7 +1,7 @@
 #ifndef COORDINATES_H
 #define COORDINATES_H
 
-#include <cstdint>
+#include <stdint.h>
 
 struct Coordinates
 {
@@ -19,6 +19,12 @@ struct Coordinates
     inline void operator/=(const Coordinates &rightHandSide) { *this = *this / rightHandSide; };
     Coordinates cross(const Coordinates &rightHandSide);
     double dot(const Coordinates &rightHandSide);
+};
+
+struct Coordinates2D
+{
+    double x;
+    double y;
 };
 
 struct FlooredCoordinates

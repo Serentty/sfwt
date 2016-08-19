@@ -2,8 +2,8 @@
 #define ENTITY_H
 
 #include <vector>
-#include <cmath>
-#include <cstdint>
+#include <math.h>
+#include <stdint.h>
 #include "Coordinates.h"
 
 class Entity

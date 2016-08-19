@@ -1,12 +1,8 @@
 #include <math.h>
+#include "Coordinates.h"
 
 const double GRAVITATIONAL_CONSTANT = 6.674e-11;
 const double PI = 3.141592;
-
-struct coord{
-double x;
-double y;
-};
 
 double findDistanceBetweenPoints(double aX, double aY, double bX, double bY)
 {

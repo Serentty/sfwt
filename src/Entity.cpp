@@ -1,6 +1,6 @@
 #include "Entity.h"
 #include "Coordinates.h"
-#include <cstdint>
+#include <stdint.h>
 
 void Entity::move()
 {

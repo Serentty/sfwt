@@ -1,8 +1,7 @@
 #include <iostream>
-#include <string>
+#include <stdint.h>
 #include <ncurses.h>
-#include "Material.h"
-#include "Calculations.h"
+#include <stdint.h>
 #include "Chunk.h"
 #include "Animal.h"
 #include "Renderer.h"
@@ -38,19 +37,15 @@ int main()
         switch(key)
         {
             case KEY_UP: // up
-                //player.relocateWithinChunk(Coordinates {player.location.x, player.location.y + 0.5, player.location.z});
                 player.velocity += Coordinates {0.0, 0.1, 0.0};
                 break;
             case KEY_DOWN: // down
-                //player.relocateWithinChunk(Coordinates {player.location.x, player.location.y - 0.5, player.location.z});
                 player.velocity += Coordinates {0.0, -0.1, 0.0};
                 break;
             case KEY_LEFT: // right
-                //player.relocateWithinChunk(Coordinates {player.location.x - 0.5, player.location.y, player.location.z});
                 player.velocity += Coordinates {-0.1, 0.0, 0.0};
                 break;
             case KEY_RIGHT: // left
-                //player.relocateWithinChunk(Coordinates {player.location.x + 0.5, player.location.y, player.location.z});
                 player.velocity += Coordinates {0.1, 0.0, 0.0};
                 break;
             case 'q': // quit

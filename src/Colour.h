@@ -2,6 +2,7 @@
 #define COLOUR_H
 
 #include <string>
+#include <stdint.h>
 
 class Colour
 {
