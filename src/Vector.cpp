@@ -42,6 +42,26 @@ Vector Vector::operator/(const Vector &rightHandSide)
     return result;
 }
 
+Vector Vector::operator+(const double &rightHandSide)
+{
+    return Vector {this->x + rightHandSide, this->y + rightHandSide, this->z + rightHandSide};
+}
+
+Vector Vector::operator-(const double &rightHandSide)
+{
+    return Vector {this->x - rightHandSide, this->y - rightHandSide, this->z - rightHandSide};
+}
+
+Vector Vector::operator*(const double &rightHandSide)
+{
+    return Vector {this->x * rightHandSide, this->y * rightHandSide, this->z * rightHandSide};
+}
+
+Vector Vector::operator/(const double &rightHandSide)
+{
+    return Vector {this->x / rightHandSide, this->y / rightHandSide, this->z / rightHandSide};
+}
+
 Vector Vector::cross(const Vector &rightHandSide)
 {
     Vector result;

@@ -29,7 +29,7 @@ public:
     inline double findSpeed() { return velocity.findMagnitude(); };
     double findTotalMass(); // Find the total mass, including contents
     double findKineticEnergy(); // Find the kinetic energy in joules
-    void move();
+    void tick();
 };
 
 #endif

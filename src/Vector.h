@@ -21,6 +21,14 @@ struct Vector
     inline void operator-=(const Vector &rightHandSide) { *this = *this - rightHandSide; };
     inline void operator*=(const Vector &rightHandSide) { *this = *this * rightHandSide; };
     inline void operator/=(const Vector &rightHandSide) { *this = *this / rightHandSide; };
+    Vector operator+(const double &rightHandSide);
+    Vector operator-(const double &rightHandSide);
+    Vector operator*(const double &rightHandSide);
+    Vector operator/(const double &rightHandSide);
+    inline void operator+=(const double &rightHandSide) { *this = *this + rightHandSide; };
+    inline void operator-=(const double &rightHandSide) { *this = *this - rightHandSide; };
+    inline void operator*=(const double &rightHandSide) { *this = *this * rightHandSide; };
+    inline void operator/=(const double &rightHandSide) { *this = *this / rightHandSide; };
     Vector cross(const Vector &rightHandSide);
     double dot(const Vector &rightHandSide);
 };

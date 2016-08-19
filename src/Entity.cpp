@@ -3,9 +3,9 @@
 #include <cstdint>
 #include <cmath>
 
-void Entity::move()
+void Entity::tick()
 {
-    this->location += this->velocity;
+    this->location += (this->velocity / 1000.0);
 }
 
 double Entity::findTotalMass()

@@ -28,11 +28,13 @@ int main()
     player.location.y = 2.0;
     player.location.z = 15.0;
     ch.entities.push_back(&player);
-    int key;
+    int key = 0;
+    int ticks = 0;
     for(;;)
     {
         key = getch();
-        player.move();
+        ch.run(100);
+        ticks += 100;
         switch(key)
         {
             case KEY_UP: // up
@@ -54,7 +56,9 @@ int main()
         }
         clear();
         printw(render(ch).c_str());
-        printw("KINETIC ENERGY: %f", player.findKineticEnergy());
+        printw("TIME ELAPSED: %f SECONDS\n", ticks / 1000.0);
+        printw("SPEED: %f METRES / SECOND\n", player.findSpeed());
+        printw("KINETIC ENERGY: %f JOULES", player.findKineticEnergy());
         refresh();
     }
     getch();

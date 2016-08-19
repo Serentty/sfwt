@@ -25,7 +25,7 @@ set(SOURCE_FILES
     src/PlanetGeneration.h
     src/Renderer.cpp
     src/Renderer.h
-    src/Tile.h)
+    src/Tile.h src/Chunk.cpp)
 
 include_directories(.)
 include_directories(src)
