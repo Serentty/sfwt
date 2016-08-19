@@ -1,7 +1,13 @@
 # Compiled object files
 *.o
+*.obj
 
 # Compiled binaries/executables
 sfwt
 *.exe
 *.app
+
+# Build directory
+
+build
+
