@@ -10,8 +10,8 @@ set(SOURCE_FILES
         src/Chunk.h
     src/Colour.cpp
     src/Colour.h
-    src/Coordinates.cpp
-    src/Coordinates.h
+        src/Vector.cpp
+        src/Vector.h
     src/Ellipse.cpp
     src/Ellipse.h
     src/Entity.cpp

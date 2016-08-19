@@ -1,5 +1,5 @@
 #include "Entity.h"
-#include "Coordinates.h"
+#include "Vector.h"
 #include <stdint.h>
 
 void Entity::move()

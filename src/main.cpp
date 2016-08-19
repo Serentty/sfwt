@@ -37,16 +37,16 @@ int main()
         switch(key)
         {
             case KEY_UP: // up
-                player.velocity += Coordinates {0.0, 0.1, 0.0};
+                player.velocity += Vector {0.0, 0.1, 0.0};
                 break;
             case KEY_DOWN: // down
-                player.velocity += Coordinates {0.0, -0.1, 0.0};
+                player.velocity += Vector {0.0, -0.1, 0.0};
                 break;
             case KEY_LEFT: // right
-                player.velocity += Coordinates {-0.1, 0.0, 0.0};
+                player.velocity += Vector {-0.1, 0.0, 0.0};
                 break;
             case KEY_RIGHT: // left
-                player.velocity += Coordinates {0.1, 0.0, 0.0};
+                player.velocity += Vector {0.1, 0.0, 0.0};
                 break;
             case 'q': // quit
                 endwin();

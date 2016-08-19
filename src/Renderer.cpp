@@ -1,7 +1,7 @@
 #include "Renderer.h"
 #include "Chunk.h"
 #include "Entity.h"
-#include "Coordinates.h"
+#include "Vector.h"
 
 std::string render(Chunk chunk)
 {
@@ -12,7 +12,7 @@ std::string render(Chunk chunk)
         {
             for(Entity *entity : chunk.entities)
             {
-                FlooredCoordinates nearestTile = entity->findFlooredCoordinates();
+                FlooredVector nearestTile = entity->findFlooredCoordinates();
                 if(nearestTile.x == x && nearestTile.y == y && nearestTile.z == 15)
                 {
                     renderedMap.push_back(entity->character);

@@ -4,25 +4,25 @@
 #include <vector>
 #include <math.h>
 #include <stdint.h>
-#include "Coordinates.h"
+#include "Vector.h"
 
 class Entity
 {
 public:
-    Coordinates location; // Location within the chunk in metres
-    Coordinates velocity; // Velocity relative to the coordinate grid in metres / second
+    Vector location; // Location within the chunk in metres
+    Vector velocity; // Velocity relative to the coordinate grid in metres / second
     // Contents (eg. organs of living things, contents of a box, etc.)
     std::vector<Entity*> contents;
     // The character used to represent the entity in the world
     char character;
     // Location and movement
-    inline FlooredCoordinates findFlooredCoordinates()
+    inline FlooredVector findFlooredCoordinates()
     {
-        return FlooredCoordinates {int32_t(std::floor(location.x)),
+        return FlooredVector {int32_t(std::floor(location.x)),
                                    int32_t(std::floor(location.y)),
                                    int32_t(std::floor(location.z))};
     };
-    inline void relocateWithinChunk(Coordinates destination)
+    inline void relocateWithinChunk(Vector destination)
     {
         this->location = destination;
     };

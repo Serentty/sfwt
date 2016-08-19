@@ -1,5 +1,5 @@
 #include <math.h>
-#include "Coordinates.h"
+#include "Vector.h"
 
 const double GRAVITATIONAL_CONSTANT = 6.674e-11;
 const double PI = 3.141592;
