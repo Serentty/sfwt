@@ -1,7 +1,5 @@
 #include <iostream>
-#include <stdint.h>
 #include <ncurses.h>
-#include <stdint.h>
 #include "Chunk.h"
 #include "Animal.h"
 #include "Renderer.h"
@@ -29,7 +27,7 @@ int main()
     player.location.y = 2.0;
     player.location.z = 15.0;
     ch.entities.push_back(&player);
-    uint16_t key;
+    int key;
     for(;;)
     {
         key = getch();

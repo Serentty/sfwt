@@ -1,6 +1,6 @@
 #include "Entity.h"
 #include "Vector.h"
-#include <stdint.h>
+#include <cstdint>
 
 void Entity::move()
 {

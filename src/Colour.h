@@ -2,12 +2,12 @@
 #define COLOUR_H
 
 #include <string>
-#include <stdint.h>
+#include <cstdint>
 
 class Colour
 {
 public:
-    uint8_t red, green, blue;
+    std::uint8_t red, green, blue;
     std::string findName();
 };
 

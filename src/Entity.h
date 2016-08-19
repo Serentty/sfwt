@@ -2,8 +2,8 @@
 #define ENTITY_H
 
 #include <vector>
-#include <math.h>
-#include <stdint.h>
+#include <cmath>
+#include <cstdint>
 #include "Vector.h"
 
 class Entity
@@ -18,9 +18,9 @@ public:
     // Location and movement
     inline FlooredVector findFlooredCoordinates()
     {
-        return FlooredVector {int32_t(floor(location.x)),
-                                   int32_t(floor(location.y)),
-                                   int32_t(floor(location.z))};
+        return FlooredVector {std::int32_t(std::floor(location.x)),
+                              std::int32_t(std::floor(location.y)),
+                              std::int32_t(std::floor(location.z))};
     };
     inline void relocateWithinChunk(Vector destination)
     {

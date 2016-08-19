@@ -48,7 +48,7 @@ double findOrbitalPeriod(double semiMajorAxis)
 }
 
 double findTheta(double x, double y){
-    if (x==0 && y==0)
+    if (x == 0 && y == 0)
         return 0;
 	double Theta;
 	Theta = atan(y / x);

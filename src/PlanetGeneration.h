@@ -1,6 +1,8 @@
 #ifndef PLANETGENERATION_H
 #define PLANETGENERATION_H
 
+#include <string>
+
 class Planet
 {
    public:

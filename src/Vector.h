@@ -1,7 +1,7 @@
 #ifndef COORDINATES_H
 #define COORDINATES_H
 
-#include <stdint.h>
+#include <cstdint>
 
 struct Vector
 {
@@ -29,9 +29,9 @@ struct Vector2D
 
 struct FlooredVector
 {
-    int32_t x;
-    int32_t y;
-    int32_t z;
+    std::int32_t x;
+    std::int32_t y;
+    std::int32_t z;
 };
 
 #endif
