@@ -1,4 +1,4 @@
-#include <math.h>
+#include <cmath>
 #include "Vector.h"
 
 const double GRAVITATIONAL_CONSTANT = 6.674e-11;
@@ -47,19 +47,11 @@ double findOrbitalPeriod(double semiMajorAxis)
     return 31536000 * pow((semiMajorAxis / 1.4960e11), 1.5);
 }
 
-double findTheta(double x, double y){
-    if (x == 0 && y == 0)
-        return 0;
-	double Theta;
-	Theta = atan(y / x);
-	Theta = (Theta * 180) / PI;
-	return Theta;
-}
-
 double findSemiMinorAxis(double semiMajorAxis, double eccentricity){
     return semiMajorAxis * sqrt (1 - pow(eccentricity,2.0));
 }
 
-double findEllipseAndLineIntersection(double SemiMajorAxis, double eccentricity, double Theta){
+double findEllipseAndLineIntersection(double SemiMajorAxis, double eccentricity, double theta)
+{
 
 }

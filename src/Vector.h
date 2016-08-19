@@ -25,6 +25,7 @@ struct Vector2D
 {
     double x;
     double y;
+    double findTheta(double x, double y);
 };
 
 struct FlooredVector

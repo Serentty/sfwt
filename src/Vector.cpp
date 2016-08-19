@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Vector.h"
 
 Vector Vector::operator+(const Vector &rightHandSide)
@@ -48,4 +49,11 @@ Vector Vector::cross(const Vector &rightHandSide)
 double Vector::dot(const Vector &rightHandSide)
 {
     return (this->x * rightHandSide.x) + (this->y * rightHandSide.y) + (this->z * rightHandSide.z);
+}
+
+double Vector2D::findTheta(double x, double y)
+{
+    if (x == 0 && y == 0)
+        return 0;
+    return (std::atan(y / x) * 180) / std::M_PI;
 }
