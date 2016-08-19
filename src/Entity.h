@@ -9,12 +9,12 @@
 class Entity
 {
 public:
+    double mass; // Mass in kilograms
+    char character; // The character used to represent the entity in the world
     Vector location; // Location within the chunk in metres
     Vector velocity; // Velocity relative to the coordinate grid in metres / second
-    // Contents (eg. organs of living things, contents of a box, etc.)
-    std::vector<Entity*> contents;
-    // The character used to represent the entity in the world
-    char character;
+    std::vector<Entity*> contents; // Contents (eg. organs of living things, contents of a box, etc.)
+
     // Location and movement
     inline FlooredVector findFlooredCoordinates()
     {
@@ -26,6 +26,9 @@ public:
     {
         this->location = destination;
     };
+    inline double findSpeed() { return velocity.findMagnitude(); };
+    double findTotalMass(); // Find the total mass, including contents
+    double findKineticEnergy(); // Find the kinetic energy in joules
     void move();
 };
 

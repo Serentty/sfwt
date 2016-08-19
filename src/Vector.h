@@ -10,6 +10,8 @@ struct Vector
     double x;
     double y;
     double z;
+    // Conversion
+    double findMagnitude();
     // Operators
     Vector operator+(const Vector &rightHandSide);
     Vector operator-(const Vector &rightHandSide);

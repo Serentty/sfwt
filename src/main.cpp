@@ -23,6 +23,7 @@ int main()
     ch.tiles[4][4][15].attributes[0] = true;
     Animal player;
     player.character = '@';
+    player.mass = 60;
     player.location.x = 2.0;
     player.location.y = 2.0;
     player.location.z = 15.0;
@@ -53,6 +54,7 @@ int main()
         }
         clear();
         printw(render(ch).c_str());
+        printw("KINETIC ENERGY: %f", player.findKineticEnergy());
         refresh();
     }
     getch();

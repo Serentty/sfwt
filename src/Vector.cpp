@@ -1,6 +1,11 @@
 #include <cmath>
 #include "Vector.h"
 
+double Vector::findMagnitude()
+{
+    return std::sqrt(std::pow(this->x, 2) + std::pow(this->y, 2) + std::pow(this->z, 2));
+}
+
 Vector Vector::operator+(const Vector &rightHandSide)
 {
     Vector result;
