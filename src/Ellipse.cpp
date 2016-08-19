@@ -2,7 +2,6 @@
 #include "Vector.h"
 
 const double GRAVITATIONAL_CONSTANT = 6.674e-11;
-const double PI = 3.141592;
 
 double findDistanceBetweenPoints(double aX, double aY, double bX, double bY)
 {

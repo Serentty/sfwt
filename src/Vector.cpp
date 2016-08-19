@@ -55,5 +55,5 @@ double Vector2D::findTheta(double x, double y)
 {
     if (x == 0 && y == 0)
         return 0;
-    return (std::atan(y / x) * 180) / std::M_PI;
+    return (std::atan(y / x) * 180) / PI;
 }
