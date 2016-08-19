@@ -18,9 +18,9 @@ public:
     // Location and movement
     inline FlooredVector findFlooredCoordinates()
     {
-        return FlooredVector {int32_t(std::floor(location.x)),
-                                   int32_t(std::floor(location.y)),
-                                   int32_t(std::floor(location.z))};
+        return FlooredVector {int32_t(floor(location.x)),
+                                   int32_t(floor(location.y)),
+                                   int32_t(floor(location.z))};
     };
     inline void relocateWithinChunk(Vector destination)
     {
