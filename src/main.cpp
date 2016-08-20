@@ -1,5 +1,6 @@
 #include <iostream>
-#include <ncurses.h>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 #include "Chunk.h"
 #include "Animal.h"
 #include "Renderer.h"
@@ -10,17 +11,6 @@ Chunk ch;
 
 int main()
 {
-    initscr();
-    raw();
-    keypad(stdscr, TRUE);
-    noecho();
-    timeout(0);
-    attron(A_BOLD);
-    printw("Space Fortress");
-    attroff(A_BOLD);
-    printw(" (Working Title)\n");
-    refresh();
-    getch();
     ch.tiles[4][4][15].attributes[0] = true;
     Animal player;
     player.character = '@';
@@ -43,42 +33,30 @@ int main()
     ch.entities.push_back(&player);
     int key = 0;
     int ticks = 0;
-    for(;;)
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFWT");
+    sf::Font font;
+    sf::Text text;
+    text.setFont(font);
+    text.setString("@");
+    text.setCharacterSize(24);
+    text.setFillColor(sf::Color::Cyan);
+    if(!font.loadFromFile("res/font.ttf"))
     {
-        key = getch();
-        ch.tick();
-        ticks++;
-        switch(key)
-        {
-            case KEY_UP: // up
-                player.velocity += Vector {0.0, 0.1, 0.0};
-                break;
-            case KEY_DOWN: // down
-                player.velocity += Vector {0.0, -0.1, 0.0};
-                break;
-            case KEY_LEFT: // right
-                player.velocity += Vector {-0.1, 0.0, 0.0};
-                break;
-            case KEY_RIGHT: // left
-                player.velocity += Vector {0.1, 0.0, 0.0};
-                break;
-            case 'q': // quit
-                endwin();
-                return 0;
-                break;
-        }
-        if(ticks % 1000 == 0)
-        {
-            clear();
-            printw(render(ch).c_str());
-            printw("TIME ELAPSED: %f SECONDS\n", ticks / 1000.0);
-            printw("SPEED: %f METRES / SECOND\n", player.findSpeed());
-            printw("KINETIC ENERGY: %f JOULES\n", player.findKineticEnergy());
-            refresh();
-        }
+        std::cerr << "Font not found: Please provide a font at res/font.ttf" << std::endl;
     }
-    getch();
-    endwin();
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if(event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        window.draw(text);
+        window.display();
+    }
 
     return 0;
 }

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 project(sfwt)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -lncurses -O3")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -lsfml-system -lsfml-window -lsfml-graphics -O3")
 
 set(SOURCE_FILES
     src/Animal.h
@@ -29,5 +29,7 @@ set(SOURCE_FILES
 
 include_directories(.)
 include_directories(src)
+
+configure_file(res/font.ttf res/font.ttf COPYONLY)
 
 add_executable(sfwt ${SOURCE_FILES})
