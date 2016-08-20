@@ -10,7 +10,7 @@ class Entity
 {
 public:
     double mass; // Mass in kilograms
-    double radius; // Radius in metres (must be <= 1)
+    double radius; // Radius in metres (must be <= 0.5)
     char character; // The character used to represent the entity in the world
     Vector location; // Location within the chunk in metres
     Vector velocity; // Velocity relative to the coordinate grid in metres / second
@@ -30,7 +30,7 @@ public:
     inline double findSpeed() { return velocity.findMagnitude(); };
     double findTotalMass(); // Find the total mass, including contents
     double findKineticEnergy(); // Find the kinetic energy in joules
-    void tick();
+    void tick(std::vector<Entity*> &surroundingEntities);
 };
 
 #endif

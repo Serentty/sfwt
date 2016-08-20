@@ -4,7 +4,11 @@
 void Chunk::tick()
 {
     for(Entity *entity : this->entities)
-        entity->tick();
+    {
+        // First, find which tile the entity is closest to
+        FlooredVector entityLocation = entity->findFlooredCoordinates();
+        entity->tick(this->entities);
+    }
 }
 
 void Chunk::run(std::uint16_t ticks)

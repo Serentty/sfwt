@@ -24,18 +24,23 @@ int main()
     ch.tiles[4][4][15].attributes[0] = true;
     Animal player;
     player.character = '@';
-    Animal dude;
-    dude.character = '&';
     player.mass = 60;
+    player.radius = 0.49;
     player.location.x = 2.0;
     player.location.y = 2.0;
     player.location.z = 15.0;
-    dude.mass = 40;
-    dude.location.x = 4.0;
-    dude.location.y = 4.0;
-    dude.location.z = 15.0;
+    for(int i = 0; i < 10; i++)
+    {
+        Animal *dude = new Animal();
+        dude->character = '&';
+        dude->mass = 40;
+        dude->radius = 0.49;
+        dude->location.x = i;
+        dude->location.y = 8.0;
+        dude->location.z = 15.0;
+        ch.entities.push_back(dude);
+    }
     ch.entities.push_back(&player);
-    ch.entities.push_back(&dude);
     int key = 0;
     int ticks = 0;
     for(;;)
@@ -69,7 +74,6 @@ int main()
             printw("TIME ELAPSED: %f SECONDS\n", ticks / 1000.0);
             printw("SPEED: %f METRES / SECOND\n", player.findSpeed());
             printw("KINETIC ENERGY: %f JOULES\n", player.findKineticEnergy());
-            printw("DISTANCE FROM DUDE: %f METRES", player.location.findDistance(dude.location));
             refresh();
         }
     }
