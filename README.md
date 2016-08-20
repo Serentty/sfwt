@@ -1,6 +1,6 @@
 # Space Fortress (Working Title)
 
-Space Fortress (Working Title) is a game where you can explore procedurally generated worlds.
+Space Fortress (Working Title) aims to be an open-ended, mostly realistic (physics-wise), medium-soft sci-fi procedurally generated galaxy simulator/sandbox/roguelike in the vein of Dwarf Fortress, rendered in pure ASCII.
 
 ## Compiling `sfwt` from source
 ### \*Nix (GNU/Linux, Mac OS X\*, \*BSDs\*)
