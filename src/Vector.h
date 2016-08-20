@@ -10,8 +10,9 @@ struct Vector
     double x;
     double y;
     double z;
-    // Conversion
+    // Conversion and distance
     double findMagnitude();
+    double findDistance(Vector &target);
     // Operators
     Vector operator+(const Vector &rightHandSide);
     Vector operator-(const Vector &rightHandSide);

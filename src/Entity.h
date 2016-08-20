@@ -10,6 +10,7 @@ class Entity
 {
 public:
     double mass; // Mass in kilograms
+    double radius; // Radius in metres (must be <= 1)
     char character; // The character used to represent the entity in the world
     Vector location; // Location within the chunk in metres
     Vector velocity; // Velocity relative to the coordinate grid in metres / second

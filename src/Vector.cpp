@@ -6,6 +6,13 @@ double Vector::findMagnitude()
     return std::sqrt(std::pow(this->x, 2) + std::pow(this->y, 2) + std::pow(this->z, 2));
 }
 
+double Vector::findDistance(Vector &target)
+{
+    return std::sqrt(std::pow(target.x - this->x, 2) +
+                     std::pow(target.y - this->y, 2) +
+                     std::pow(target.z - this->z, 2));
+}
+
 Vector Vector::operator+(const Vector &rightHandSide)
 {
     Vector result;
