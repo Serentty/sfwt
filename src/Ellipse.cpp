@@ -61,6 +61,16 @@ double findSemiMinorAxis(double semiMajorAxis, double eccentricity)
     return semiMajorAxis * std::sqrt(1 - std::pow(eccentricity, 2.0));
 }
 
+Vector2D findFastEllipseAndLineIntersection(double semiMajorAxis, double eccentricity, double theta){
+    double lineRate = std::sin(theta) / std::cos(theta);
+    double semiMinorAxis = findSemiMinorAxis(semiMajorAxis, eccentricity);
+    Vector2D point;
+    point.x = (semiMajorAxis*semiMinorAxis)/(sqrt((pow(semiMajorAxis,2)*pow(lineRate,2))+pow(semiMinorAxis,2)));
+    point.y = (semiMajorAxis*semiMinorAxis*lineRate)/(sqrt((pow(semiMajorAxis,2)*pow(lineRate,2))+pow(semiMinorAxis,2)));
+    return point;
+}
+
+//Use this one below only when necessary
 Vector2D findEllipseAndLineIntersection(double semiMajorAxis, double eccentricity, double theta,
                                         double lineXDisplacement, double ellipseXDisplacement,
                                         double ellipseYDisplacement)
@@ -78,6 +88,7 @@ Vector2D findEllipseAndLineIntersection(double semiMajorAxis, double eccentricit
                          std::pow(ellipseYDisplacement, 2) +
                          (2 * (lineXDisplacement + lineRate * ellipseXDisplacement) * ellipseYDisplacement))) /
               ((std::pow(semiMajorAxis, 2)) * (std::pow(lineRate, 2)) + std::pow(semiMinorAxis, 2));
+
     point.y = (std::pow(semiMinorAxis, 2) * (lineXDisplacement + lineRate * ellipseXDisplacement)) +
               ellipseYDisplacement * std::pow(semiMajorAxis, 2) * std::pow(lineRate, 2) +
               semiMajorAxis * semiMinorAxis * lineRate *
