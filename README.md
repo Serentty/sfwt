@@ -24,8 +24,9 @@ git clone https://github.com/Gareth422/sfwt.git
 #### Building and running   
 
 ```
-$ cd sfwt   
+$ cd sfwt  
 $ mkdir build
+$ cd build
 $ cmake ..
 $ make
 $ ./sfwt
