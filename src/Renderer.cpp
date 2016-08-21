@@ -7,7 +7,7 @@
 #include "Entity.h"
 #include "Vector.h"
 
-const uint8_t TILE_SIZE = 24; // 24x24 pixels
+const uint8_t TILE_SIZE = 48; // 24x24 pixels
 sf::Font *renderFont;
 sf::Text characterBuffer;
 

@@ -52,6 +52,20 @@ int main()
         window.clear();
         render(ch, window);
         window.display();
+
+        // Input
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+            player.velocity += Vector {0.0, 0.1, 0.0};
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+            player.velocity += Vector {0.0, -0.1, 0.0};
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+            player.velocity += Vector {-0.1, 0.0, 0.0};
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+            player.velocity += Vector {0.1, 0.1, 0.0};
+
+        // Tick
+        ch.run(16); // At 60 FPS, this is approximately real-time
     }
 
     return 0;
