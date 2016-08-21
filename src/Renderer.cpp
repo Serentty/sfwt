@@ -1,33 +1,46 @@
+#include <string>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <iostream>
 #include "Renderer.h"
 #include "Chunk.h"
 #include "Entity.h"
 #include "Vector.h"
 
-std::string render(Chunk chunk)
+const uint8_t TILE_SIZE = 24; // 24x24 pixels
+sf::Font *renderFont;
+sf::Text characterBuffer;
+
+void setFont(sf::Font *font)
 {
-    std::string renderedMap;
+    renderFont = font;
+}
+
+void render(Chunk chunk, sf::RenderWindow &window)
+{
+    characterBuffer.setFont(*renderFont);
+    characterBuffer.setCharacterSize(TILE_SIZE);
+    characterBuffer.setFillColor(sf::Color::White);
     for(int y = 15; y >= 0; y--)
     {
         for(int x = 0; x <= 15; x++)
         {
-            for(Entity *entity : chunk.entities)
-            {
-                FlooredVector nearestTile = entity->findFlooredCoordinates();
-                if(nearestTile.x == x && nearestTile.y == y && nearestTile.z == 15)
-                {
-                    renderedMap.push_back(entity->character);
-                    goto nextTile;
-                }
-            }
             if(chunk.tiles[x][y][15].isSloped())
-                renderedMap.push_back('n');
+                characterBuffer.setString("n");
             else
-                renderedMap.push_back('O');
+                characterBuffer.setString("O");
 
-            nextTile:
-            continue;
+            characterBuffer.setPosition(x * TILE_SIZE, window.getSize().y - y * TILE_SIZE);
+            window.draw(characterBuffer);
+
+            //nextTile:
+            //continue;
         }
-        renderedMap.push_back('\n');
+        //renderedMap.push_back('\n');
     }
-    return renderedMap;
+    for(Entity *entity : chunk.entities)
+    {
+        // TODO
+    }
+    //return renderedMap;
 }

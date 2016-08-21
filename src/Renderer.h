@@ -4,6 +4,7 @@
 #include <string>
 #include "Chunk.h"
 
-std::string render(Chunk chunk);
+void setFont(sf::Font *font);
+void render(Chunk chunk, sf::RenderWindow &window);
 
 #endif

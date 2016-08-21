@@ -35,15 +35,11 @@ int main()
     int ticks = 0;
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFWT");
     sf::Font font;
-    sf::Text text;
-    text.setFont(font);
-    text.setString("@");
-    text.setCharacterSize(24);
-    text.setFillColor(sf::Color::Cyan);
     if(!font.loadFromFile("res/font.ttf"))
     {
         std::cerr << "Font not found: Please provide a font at res/font.ttf" << std::endl;
     }
+    setFont(&font);
     while (window.isOpen())
     {
         sf::Event event;
@@ -54,7 +50,7 @@ int main()
         }
 
         window.clear();
-        window.draw(text);
+        render(ch, window);
         window.display();
     }
 
