@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <yaml-cpp/yaml.h>
 #include "Chunk.h"
 #include "Animal.h"
 #include "Renderer.h"
@@ -11,11 +12,14 @@ Chunk ch;
 
 int main()
 {
+    YAML::Node dirt = YAML::LoadFile("Resources/Data/Materials/Dirt.yaml");
+    std::cout << dirt["material"]["density"].as<double>() << std::endl;
+    /*
     ch.tiles[4][4][15].attributes[0] = true;
     Animal player;
     player.character = '@';
     player.mass = 60;
-    player.radius = 0.49;
+    player.radius = 0.50;
     player.location.x = 2.0;
     player.location.y = 2.0;
     player.location.z = 15.0;
@@ -24,7 +28,7 @@ int main()
         Animal *dude = new Animal();
         dude->character = '&';
         dude->mass = 40;
-        dude->radius = 0.49;
+        dude->radius = 0.50;
         dude->location.x = i;
         dude->location.y = 8.0;
         dude->location.z = 15.0;
@@ -39,7 +43,7 @@ int main()
             ch.tiles[i][j][15].floorMaterial = &dirt;
 
     uint64_t ticks = 0;
-    sf::RenderWindow window(sf::VideoMode(1280, 1024), "SFWT");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFWT");
     sf::Font font;
     if(!font.loadFromFile("res/font.ttf"))
     {
@@ -74,6 +78,6 @@ int main()
         ch.run(16); // At 60 FPS, this is approximately real-time
         ticks += 16;
     }
-
+    */
     return 0;
 }

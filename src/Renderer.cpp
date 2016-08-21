@@ -1,7 +1,7 @@
 #include <string>
+#include <iostream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "Renderer.h"
 #include "Chunk.h"
 #include "Entity.h"
@@ -18,7 +18,7 @@ void setFont(sf::Font *font)
 
 void render(Chunk chunk, sf::RenderWindow &window)
 {
-    tileSize = window.getSize().y / 32;
+    tileSize = window.getSize().y / 16;
     characterBuffer.setFont(*renderFont);
     characterBuffer.setCharacterSize(tileSize);
     // Render tiles
