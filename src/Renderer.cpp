@@ -32,15 +32,14 @@ void render(Chunk chunk, sf::RenderWindow &window)
 
             characterBuffer.setPosition(x * TILE_SIZE, window.getSize().y - y * TILE_SIZE);
             window.draw(characterBuffer);
-
-            //nextTile:
-            //continue;
         }
-        //renderedMap.push_back('\n');
     }
     for(Entity *entity : chunk.entities)
     {
-        // TODO
+        std::string str(1, entity->character);
+        characterBuffer.setString(str);
+        characterBuffer.setPosition(entity->location.x * TILE_SIZE,
+                                    window.getSize().y - entity->location.y * TILE_SIZE);
+        window.draw(characterBuffer);
     }
-    //return renderedMap;
 }
