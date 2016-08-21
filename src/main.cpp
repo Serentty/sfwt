@@ -31,9 +31,15 @@ int main()
         ch.entities.push_back(dude);
     }
     ch.entities.push_back(&player);
-    int key = 0;
-    int ticks = 0;
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFWT");
+    Material dirt(1510.0);
+    sf::Color brown(153, 102, 51);
+    dirt.colour = brown;
+    for(int i = 0; i < 16; i++)
+        for(int j = 0; j < 16; j++)
+            ch.tiles[i][j][15].floorMaterial = &dirt;
+
+    uint64_t ticks = 0;
+    sf::RenderWindow window(sf::VideoMode(1280, 1024), "SFWT");
     sf::Font font;
     if(!font.loadFromFile("res/font.ttf"))
     {
@@ -62,10 +68,11 @@ int main()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
             player.velocity += Vector {-0.1, 0.0, 0.0};
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            player.velocity += Vector {0.1, 0.1, 0.0};
+            player.velocity += Vector {0.1, 0.0, 0.0};
 
         // Tick
         ch.run(16); // At 60 FPS, this is approximately real-time
+        ticks += 16;
     }
 
     return 0;

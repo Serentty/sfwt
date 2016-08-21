@@ -1,6 +1,7 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 
+#include <SFML/Graphics.hpp>
 #include "Material.h"
 #include "Colour.h"
 
@@ -18,7 +19,7 @@ public:
     double transparency; // how clearly an image can be seen - 0 to 1
     double indexOfRefraction; // index refraction for light
     double gloss; // measured in GU (gloss units)
-    Colour colour;
+    sf::Color colour;
     Material(double density);
 };
 

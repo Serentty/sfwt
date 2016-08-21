@@ -3,12 +3,8 @@
 
 #include <string>
 #include <cstdint>
+#include <SFML/Graphics.hpp>
 
-class Colour
-{
-public:
-    std::uint8_t red, green, blue;
-    std::string findName();
-};
+std::string findColourName(sf::Color colour);
 
 #endif
