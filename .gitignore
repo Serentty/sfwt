@@ -11,3 +11,6 @@ sfwt
 
 build
 
+# KDevelop stuff
+.kdev4
+*.kdev4
