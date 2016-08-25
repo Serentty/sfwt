@@ -12,9 +12,6 @@ Chunk ch;
 
 int main()
 {
-    YAML::Node dirt = YAML::LoadFile("Resources/Data/Materials/Dirt.yaml");
-    std::cout << dirt["material"]["density"].as<double>() << std::endl;
-    /*
     ch.tiles[4][4][15].attributes[0] = true;
     Animal player;
     player.character = '@';
@@ -45,9 +42,10 @@ int main()
     uint64_t ticks = 0;
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFWT");
     sf::Font font;
-    if(!font.loadFromFile("res/font.ttf"))
+    if(!font.loadFromFile("Resources/Font.ttf"))
     {
-        std::cerr << "Font not found: Please provide a font at res/font.ttf" << std::endl;
+        std::cerr << "Font not found: Please provide a font at Resources/Font.ttf" << 
+std::endl;
     }
     setFont(&font);
     while (window.isOpen())
@@ -78,6 +76,5 @@ int main()
         ch.run(16); // At 60 FPS, this is approximately real-time
         ticks += 16;
     }
-    */
     return 0;
 }
