@@ -7,7 +7,7 @@
 #include "Entity.h"
 #include "Vector.h"
 
-uint8_t tileSize = 24; // 24x24 pixels
+const uint8_t tileSize = 24; // 24x24 pixels
 sf::Font *renderFont;
 sf::Text characterBuffer;
 
@@ -22,9 +22,9 @@ void render(Chunk chunk, sf::RenderWindow &window)
     characterBuffer.setFont(*renderFont);
     characterBuffer.setCharacterSize(tileSize);
     // Render tiles
-    for(int y = 15; y >= 0; y--)
+    for(unsigned int y = 15; y >= 0; y--)
     {
-        for(int x = 0; x <= 15; x++)
+        for(unsigned int x = 0; x <= 15; x++)
         {
             if(chunk.tiles[x][y][15].isSloped())
                 characterBuffer.setString("n");
