@@ -15,8 +15,10 @@ Currently we do not provide downloadable pre-compiled binaries, so you will have
 
 You need the following dependencies installed in order to build and run `sfwt`:  
 *  `cmake`  
-* `C++14`-compatible compiler (`clang`, `g++` etc)
+* `C++17`-compatible compiler (`clang`, `g++` etc)
 * `sfml` (`sfml-dev` in some distributions)
+* `yaml-cpp`
+* `boost` (the game doesn't use it, but the above library does)
 
 It is recommended to use the newest versions available for your system/distribution.
 
@@ -43,7 +45,7 @@ $ ./sfwt
 
 ### Windows  
 
-[Coming soon]
+Build on Windows using MSYS2. The same libraries are required, and can all be found in the repositories.
 
 ## Contributing & Licensing
 
